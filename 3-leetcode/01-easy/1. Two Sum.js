@@ -1,4 +1,4 @@
-// Solution of O(n)
+// Solution of O(n) Using HashMap
 const twoSum = (nums, target) => {
     let numsMap = new Map();
     let len = nums.length;
@@ -13,28 +13,28 @@ const twoSum = (nums, target) => {
 
 
 
-// Solution of O(nlogn)
-// const twoSum = (nums, target) => {
-//     let newNums = nums.slice().sort((a, b) => a - b);
-//     let len = nums.length;
-//     let start = 0,
-//         end = len - 1;
+// Solution of O(nlogn) Using Sort
+const twoSum = (nums, target) => {
+    let newNums = nums.slice().sort((a, b) => a - b);
+    let len = nums.length;
+    let start = 0,
+        end = len - 1;
     
-//     while (true) {
-//         let sum = newNums[start] + newNums[end];
-//         if (sum === target) return [nums.indexOf(newNums[start]), nums.lastIndexOf(newNums[end])];
-//         if (sum > target) end--;
-//         else if (sum < target) start++;
-//     }
-// }
+    while (true) {
+        let sum = newNums[start] + newNums[end];
+        if (sum === target) return [nums.indexOf(newNums[start]), nums.lastIndexOf(newNums[end])];
+        if (sum > target) end--;
+        else if (sum < target) start++;
+    }
+}
 
 
 
-// Solution of O(n^2)
-// const twoSum = (nums, target) => {
-//     for (let i = 0, len = nums.length; i < len; i++) {
-//         for (let j = i + 1; j < len; j++) {
-//             if (nums[i] + nums[j] === target) return [i, j];
-//         }
-//     }
-// };
+// Solution of O(n^2) Using Brute Force
+const twoSum = (nums, target) => {
+    for (let i = 0, len = nums.length; i < len; i++) {
+        for (let j = i + 1; j < len; j++) {
+            if (nums[i] + nums[j] === target) return [i, j];
+        }
+    }
+};
