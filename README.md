@@ -2,7 +2,7 @@
 
 알고리즘 공부 기록과 풀이
 
-1. 프로그래머스 22/07/27 7,232th | 1,367 Point | 91 Solved
-2. LeetCode 22/07/27 1,898,159th | 11 Solved(Easy 6 / Medium 4 / Hard 1)
+22/07/28
 
-- 22/06/26 프로그래머스 Lv 1 All Solved
+1. 프로그래머스 7,232th | 1,367 Point | 91 Solved
+2. LeetCode 1,682,257th | 15 Solved(Easy 9 / Medium 5 / Hard 1)
