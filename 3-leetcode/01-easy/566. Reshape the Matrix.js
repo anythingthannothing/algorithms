@@ -1,14 +1,16 @@
 // Loop Once
 const matrixReshape = (mat, r, c) => {
-    let m = mat.length,
-        n = mat[0].length;
-    if (r * c !== n * m) return mat;
-    let answer = Array.from({length: r}, v => Array.from({length: c}, v => 0));
-    for (let  i = 0; i < r * c; i++) {
-      answer[Math.floor(i / c)][i % c] = mat[Math.floor(i / n)][i % n];
-    } 
-    return answer;
-}
+  let m = mat.length,
+    n = mat[0].length;
+  if (r * c !== n * m) return mat;
+  let answer = Array.from({ length: r }, (v) =>
+    Array.from({ length: c }, (v) => 0)
+  );
+  for (let i = 0; i < r * c; i++) {
+    answer[Math.floor(i / c)][i % c] = mat[Math.floor(i / n)][i % n];
+  }
+  return answer;
+};
 
 // Loop Twice
 // const matrixReshape = (mat, r, c) => {

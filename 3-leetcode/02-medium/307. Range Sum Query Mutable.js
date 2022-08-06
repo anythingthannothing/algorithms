@@ -5,12 +5,12 @@ class NumArray {
   constructor(nums) {
     this.nums = nums;
     len = Math.ceil(nums.length / Math.sqrt(nums.length));
-    block = Array.from({length: len}, v => 0);
+    block = Array.from({ length: len }, (v) => 0);
     for (let i = 0; i < nums.length; i++) {
       block[Math.floor(i / len)] += nums[i];
     }
   }
-  
+
   sumRange(left, right) {
     let sum = 0;
     let startBlock = Math.floor(left / len);
@@ -32,10 +32,10 @@ class NumArray {
     }
     return sum;
   }
-  
-    update(index, val) {
+
+  update(index, val) {
     let blockIndex = Math.floor(index / len);
     block[blockIndex] = block[blockIndex] - this.nums[index] + val;
     this.nums[index] = val;
   }
-};
+}
