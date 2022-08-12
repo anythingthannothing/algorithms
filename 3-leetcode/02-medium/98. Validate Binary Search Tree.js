@@ -11,3 +11,19 @@ const validate = function (root, low, high) {
 function isValidBST(root) {
   return validate(root, null, null);
 }
+
+const isValidBST = function (root) {
+  let data = [];
+
+  function DFSInOrder(root) {
+    if (root.left) DFSInOrder(root.left);
+    data.push(root.val);
+    if (root.right) DFSInOrder(root.right);
+  }
+
+  DFSInOrder(root);
+  for (let i = 0; i < data.length - 1; i++) {
+    if (data[i] < data[i + 1]) return false;
+  }
+  return true;
+};
