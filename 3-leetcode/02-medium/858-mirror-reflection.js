@@ -29,4 +29,5 @@ const mirrorReflection = (p, q) => {
     if (position[0] === p && position[1] === 0) return 0;
     if (position[0] === p && position[1] === p) return 1;
     if (position[0] === 0 && position[1] === p) return 2;
+  }
 };
