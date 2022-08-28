@@ -11,19 +11,15 @@ const maxSumSubmatrix = function (matrix, k) {
         max = -Infinity;
 
       for (let c = 0; c < col; c++) {
-        // build running dp array
         dp[c] += matrix[j][c];
 
-        // implement kadane's algorithm
         if (sum < 0) sum = 0;
         sum += dp[c];
         max = Math.max(max, sum);
       }
 
-      // if max <= k take kadane's algorithm
       if (max <= k) maxSum = Math.max(max, maxSum);
       else {
-        // if max > k find the max subarray sum no larger than k
         max = -Infinity;
 
         for (let c = 0; c < col; c++) {
@@ -36,7 +32,7 @@ const maxSumSubmatrix = function (matrix, k) {
         }
         maxSum = Math.max(max, maxSum);
       }
-      if (maxSum === k) return k; // short circuit
+      if (maxSum === k) return k;
     }
   }
   return maxSum;
