@@ -6,6 +6,6 @@
 
 1. 프로그래머스 6,981th | 1,377 Point | 95 Solved
 
-2. LeetCode 582,546th | 86 Solved(Easy 36 / Medium 41 / Hard 9)
+2. LeetCode 578,177th | 87 Solved(Easy 36 / Medium 42 / Hard 9)
 
 - https://leetcode.com/anythingthannothing/
