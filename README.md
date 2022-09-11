@@ -4,8 +4,8 @@
 
 22/09/11
 
-1. 프로그래머스 6,981th | 1,377 Point | 95 Solved
+1. 프로그래머스 6,981th | 95 Solved | 1,377 Point
 
-2. LeetCode 569,366th | 89 Solved(Easy 35 / Medium 43/ Hard 11)
+2. LeetCode 569,366th | 91 Solved(Easy 36 / Medium 44 / Hard 11)
 
 - https://leetcode.com/anythingthannothing/
