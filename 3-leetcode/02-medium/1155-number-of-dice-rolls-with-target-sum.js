@@ -8,16 +8,16 @@ var numRollsToTarget = function (n, k, target) {
     const key = `${n}:${target}`;
     if (counts[key]) return counts[key];
 
-    let res = 0;
+    let answer = 0;
 
     for (let i = 1; i <= k; i++) {
-      res += countRec(n - 1, k, target - i);
-      res %= 10 ** 9 + 7;
+      answer += countRec(n - 1, k, target - i);
+      answer %= 10 ** 9 + 7;
     }
 
-    counts[key] = res;
+    counts[key] = answer;
 
-    return res;
+    return answer;
   };
 
   return countRec(n, k, target);
