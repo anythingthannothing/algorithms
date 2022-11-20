@@ -1,3 +1,7 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
 class Solution {
 public:
     int getRotationAngle(vector<int> A, vector<int> B, vector<int> C) {
