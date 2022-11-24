@@ -11,16 +11,12 @@ pair<int, int> answer;
 void solve()
 {
     for (int i = 0; i < 9; i++)
-    {
         for (int j = 0; j < i; j++)
-        {
             if (sum - a[i] - a[j] == 100)
             {
                 answer = {i, j};
                 return;
             }
-        }
-    }
 }
 
 int main()
