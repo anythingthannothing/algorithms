@@ -9,4 +9,4 @@
 
 2. 프로그래머스 6,981th | 95 Solved | 1,377 Point
 
-3. BOJ Bronze IV | 17 Solved
+3. BOJ Bronze II | 21 Solved
