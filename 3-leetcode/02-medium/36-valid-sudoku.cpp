@@ -13,7 +13,6 @@ public:
     for (int r = 0; r < 9; r++)
     {
       for (int c = 0; c < 9; c++)
-      {
         if (board[r][c] != '.')
         {
           int curr = board[r][c] - '0' - 1;
@@ -22,7 +21,6 @@ public:
             return false;
           row[r][curr] = col[c][curr] = block[b][curr] = 1;
         }
-      }
     }
 
     return true;
