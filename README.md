@@ -2,11 +2,11 @@
 
 알고리즘 공부 기록과 풀이
 
-22/11/30
+22/12/01
 
-1. LeetCode 286,611th | 192 Solved(Easy 63 / Medium 101 / Hard 28)
+1. LeetCode 285,086th | 193 Solved(Easy 64 / Medium 101 / Hard 28)
 - https://leetcode.com/anythingthannothing/
 
 2. 프로그래머스 6,981th | 95 Solved | 1,377 Point
 
-3. BOJ Bronze I | 24 Solved
+3. BOJ Bronze I | 26 Solved
