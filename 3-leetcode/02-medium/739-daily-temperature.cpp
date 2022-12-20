@@ -17,7 +17,7 @@ public:
 
     for (int i = 0; i < n; i++)
     {
-      while (!stk.empty() && stk.top().first <= T[i])
+      while (!stk.empty() && stk.top().first < T[i])
       {
         int index = stk.top().second;
         stk.pop();
