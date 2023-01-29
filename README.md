@@ -4,7 +4,7 @@
 
 23/01/28
 
-1. LeetCode 216,246th | 246 Solved(Easy 76 / Medium 136 / Hard 34)
+1. LeetCode 215,141th | 246 Solved(Easy 76 / Medium 136 / Hard 34)
 - https://leetcode.com/anythingthannothing/
 
 2. 프로그래머스 6,981th | 95 Solved | 1,377 Point
