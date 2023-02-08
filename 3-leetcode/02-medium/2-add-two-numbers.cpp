@@ -16,7 +16,8 @@ class Solution
 public:
   ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
   {
-    ListNode preHead(0), *p = &preHead;
+    ListNode preHead = ListNode(0);
+    ListNode *p = &preHead;
     int extra = 0;
     while (l1 || l2 || extra)
     {
