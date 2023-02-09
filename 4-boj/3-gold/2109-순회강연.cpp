@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int sum, n, p, d, schedule[10001];
+int sum, n, p, d;
 vector<pair<int, int>> payPerDay;
 priority_queue<int, vector<int>, greater<int>> pq;
 
