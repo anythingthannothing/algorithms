@@ -9,3 +9,6 @@
 
 # BUILD
 build/
+
+# Unsolved
+ns-*.cpp
