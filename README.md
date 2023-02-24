@@ -2,9 +2,9 @@
 
 알고리즘 공부 기록과 풀이
 
-23/02/23
+23/02/24
 
-1. LeetCode 206,045th | 258 Solved(Easy 85 / Medium 139 / Hard 34)
+1. LeetCode 205,233th | 259 Solved(Easy 86 / Medium 139 / Hard 34)
 - https://leetcode.com/anythingthannothing/
 
 2. 프로그래머스 6,981th | 95 Solved | 1,377 Point
