@@ -3,8 +3,8 @@
 using namespace std;
 
 int n, a[11], pl, mi, mul, divi;
-int ret = -1000000001;
-int ret2 = 1000000001;
+int ret = -1000000000;
+int ret2 = 1000000000;
 
 void go(int index, int curr, int plus, int minus, int mul, int div)
 {
@@ -28,18 +28,13 @@ void go(int index, int curr, int plus, int minus, int mul, int div)
 int main()
 {
   cin >> n;
-
   for (int i = 0; i < n; i++)
   {
     cin >> a[i];
   }
-
   cin >> pl >> mi >> mul >> divi;
-
   go(0, a[0], pl, mi, mul, divi);
-
   cout << ret << '\n'
        << ret2;
-
   return 0;
 }
