@@ -2,22 +2,24 @@
 
 using namespace std;
 
-int n, m, a[100001], cnt, sum, total, answer = 987654321;
+int n, m, curr, cnt, a[100000], ans;
 
 bool check(int mid)
 {
-  cnt = 1;
-  sum = 0;
+  curr = mid, cnt = 1;
   for (int i = 0; i < n; i++)
   {
     if (a[i] > mid)
-      return false;
-    if (sum + a[i] > mid)
     {
-      sum = 0;
-      cnt++;
+      return false;
     }
-    sum += a[i];
+    if (curr < a[i])
+    {
+      cnt++;
+      curr = mid - a[i];
+      continue;
+    }
+    curr -= a[i];
   }
   return cnt <= m;
 }
@@ -29,26 +31,23 @@ int main()
   for (int i = 0; i < n; i++)
   {
     cin >> a[i];
-    total += a[i];
   }
 
-  int lo = 0, hi = total, mid;
+  int lo = 0, hi = 1000000000, mid;
 
   while (lo <= hi)
   {
-    mid = (lo + hi) / 2;
+    mid = lo + (hi - lo) / 2;
     if (check(mid))
     {
-      answer = mid;
+      ans = mid;
       hi = mid - 1;
+      continue;
     }
-    else
-    {
-      lo = mid + 1;
-    }
+    lo = mid + 1;
   }
 
-  cout << answer;
+  cout << ans;
 
   return 0;
 }
