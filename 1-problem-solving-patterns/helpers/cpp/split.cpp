@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<string> split(const string &input, string delimiter)
+{
+    vector<string> result;
+    auto begin = 0;
+    auto end = input.find(delimiter);
+    while (end != string::npos)
+    {
+        result.push_back(input.substr(begin, end - begin));
+        begin = end + delimiter.size();
+        end = input.find(delimiter, begin);
+    }
+    result.push_back(input.substr(begin));
+    return result;
+}
