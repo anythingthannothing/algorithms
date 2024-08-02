@@ -16,3 +16,15 @@ vector<string> split(const string &input, string delimiter)
     result.push_back(input.substr(begin));
     return result;
 }
+
+int main()
+{
+    string a = "aaa bbb ccc";
+    vector<string> b = split(a, " ");
+
+    for (auto v : b)
+    {
+        cout << v << "\n";
+    }
+    return 0;
+}
