@@ -9,13 +9,17 @@ pair<int, int> ans;
 void combi(int start, vector<int> arr)
 {
   if (arr.size() == 2)
+  {
     if (a[arr[0]] + a[arr[1]] == target)
+    {
       ans = {a[arr[0]], a[arr[1]]};
+    }
+  }
 
-  for (int i = start + 1; i < 9; i++)
+  for (int i = start; i < 9; i++)
   {
     arr.push_back(i);
-    combi(i, arr);
+    combi(i + 1, arr);
     arr.pop_back();
   }
 }
@@ -31,7 +35,7 @@ int main()
   target = sum - 100;
 
   vector<int> v;
-  combi(-1, v);
+  combi(0, v);
   vector<int> seven;
 
   for (int n : a)

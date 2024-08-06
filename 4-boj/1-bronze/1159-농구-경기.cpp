@@ -26,9 +26,13 @@ int main()
       result += (i + 'a');
   }
   if (result.length())
+  {
     cout << result;
+  }
   else
+  {
     cout << "PREDAJA";
+  }
 
   return 0;
 }
