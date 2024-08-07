@@ -16,7 +16,9 @@ int main()
   cin >> s;
 
   for (char c : s)
+  {
     cnt[c - 'A']++;
+  }
   for (int i = 25; i >= 0; i--)
   {
     if (cnt[i] & 1)
@@ -37,7 +39,9 @@ int main()
     }
   }
   if (mid)
+  {
     ret.insert(ret.begin() + ret.size() / 2, mid);
+  }
   cout << ret;
 
   return 0;

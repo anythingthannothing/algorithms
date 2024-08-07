@@ -2,9 +2,7 @@
 
 using namespace std;
 
-int n, k;
-int ret = INT_MIN;
-vector<int> arr;
+int n, k, temp, psum[100001], ret = INT_MIN;
 
 int main()
 {
@@ -14,21 +12,15 @@ int main()
 
   cin >> n >> k;
 
-  for (int i = 0; i < n; i++)
+  for (int i = 1; i <= n; i++)
   {
-    int curr;
-    cin >> curr;
-    arr.push_back(curr);
+    cin >> temp;
+    psum[i] = psum[i - 1] + temp;
   }
-  int temp = 0;
-  for (int i = 0; i < k; i++)
-    temp += arr[i];
-  ret = max(ret, temp);
 
-  for (int i = 0, j = k; j < n; i++, j++)
+  for (int i = k; i <= n; i++)
   {
-    temp += arr[j] - arr[i];
-    ret = max(ret, temp);
+    ret = max(ret, psum[i] - psum[i - k]);
   }
 
   cout << ret;

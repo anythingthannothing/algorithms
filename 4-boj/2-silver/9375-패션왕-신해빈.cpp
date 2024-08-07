@@ -2,6 +2,8 @@
 
 using namespace std;
 
+typedef long long ll;
+
 int t, n;
 string a, b;
 
@@ -21,9 +23,13 @@ int main()
       cin >> a >> b;
       cMap[b]++;
     }
-    long long ret = 1;
+
+    ll ret = 1;
+
     for (auto c : cMap)
+    {
       ret *= (c.second + 1);
+    }
 
     ret--;
     cout << ret << "\n";

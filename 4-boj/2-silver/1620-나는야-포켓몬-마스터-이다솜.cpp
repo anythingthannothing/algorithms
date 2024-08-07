@@ -26,7 +26,9 @@ int main()
   {
     cin >> s;
     if (atoi(s.c_str()) == 0)
+    {
       cout << sMap[s] << "\n";
+    }
     else
       cout << iMap[atoi(s.c_str())] << "\n";
   }

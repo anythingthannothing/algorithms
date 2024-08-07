@@ -6,17 +6,18 @@ int k = 3;
 const int n = 5;
 int a[n] = {1, 2, 3, 4, 5};
 
-void print(vector<int> b)
+void print(vector<int> &b)
 {
     for (int i : b)
         cout << i << " ";
     cout << '\n';
 }
 
-void combi(int start, vector<int> b)
+void combi(int start, vector<int> &b)
 {
     if (b.size() == k)
     {
+        // Target logic
         print(b);
         return;
     }
