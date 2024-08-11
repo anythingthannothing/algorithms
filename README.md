@@ -4,7 +4,7 @@
 
 24/08/10
 
-1. LeetCode 289,310th | 289 Solved(Easy 107 / Medium 147 / Hard 35)
+1. LeetCode 288,154th | 290 Solved(Easy 107 / Medium 147 / Hard 36)
 - https://leetcode.com/anythingthannothing/
 
 2. 프로그래머스 6,981th | 95 Solved | 1,377 Point
