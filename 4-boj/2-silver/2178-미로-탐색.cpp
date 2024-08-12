@@ -3,9 +3,7 @@
 using namespace std;
 
 int n, m, a[100][100], visited[100][100], r, c;
-string s;
-vector<vector<int>> arr;
-const vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+const pair<int, int> dirs[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 int main()
 {
@@ -27,14 +25,14 @@ int main()
   {
     tie(r, c) = q.front();
     q.pop();
-    for (int i = 0; i < 4; i++)
+    for (pair<int, int> dir : dirs)
     {
-      int nr = r + dirs[i][0];
-      int nc = c + dirs[i][1];
-      if (nr < 0 || nr >= n || nc < 0 || nc >= m || a[nr][nc] == 0)
+      int nr = r + dir.first;
+      int nc = c + dir.second;
+      if (nr < 0 || nr >= n || nc < 0 || nc >= m || a[nr][nc] == 0 || visited[nr][nc])
+      {
         continue;
-      if (visited[nr][nc])
-        continue;
+      }
       visited[nr][nc] = visited[r][c] + 1;
       q.push({nr, nc});
     }

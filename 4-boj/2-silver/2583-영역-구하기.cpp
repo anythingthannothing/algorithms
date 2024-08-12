@@ -2,22 +2,26 @@
 
 using namespace std;
 
-int m, n, k, ny, nx, leftX, leftY, rightX, rightY, curr, cnt, arr[101][101], visited[101][101];
+int m, n, k, ny, nx, leftX, leftY, rightX, rightY, curr, cnt, arr[100][100], visited[100][100];
 vector<int> ret;
-vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+pair<int, int> dirs[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 int DFS(int y, int x)
 {
   int ret = 1;
   visited[y][x] = 1;
-  for (auto &p : dirs)
+  for (pair<int, int> dir : dirs)
   {
-    ny = y + p[0];
-    nx = x + p[1];
+    ny = y + dir.first;
+    nx = x + dir.second;
     if (ny < 0 || nx < 0 || ny >= n || nx >= m || visited[ny][nx])
+    {
       continue;
+    }
     if (!arr[ny][nx])
+    {
       ret += DFS(ny, nx);
+    }
   }
   return ret;
 }

@@ -3,19 +3,21 @@
 using namespace std;
 
 int t, n, m, k, r, c, nr, nc, ret;
-int arr[51][51];
-bool visited[51][51];
-vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+int arr[50][50];
+bool visited[50][50];
+pair<int, int> dirs[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 void DFS(int r, int c)
 {
-  for (int i = 0; i < 4; i++)
+  for (pair<int, int> dir : dirs)
   {
-    nr = r + dirs[i][0];
-    nc = c + dirs[i][1];
-    if (nr < 0 || nr >= n || nc < 0 || nc >= m)
+    nr = r + dir.first;
+    nc = c + dir.second;
+    if (nr < 0 || nr >= n || nc < 0 || nc >= m || visited[nr][nc])
+    {
       continue;
-    if (arr[nr][nc] == 1 && !visited[nr][nc])
+    }
+    if (arr[nr][nc] == 1)
     {
       visited[nr][nc] = 1;
       DFS(nr, nc);
@@ -34,8 +36,8 @@ int main()
 
   while (t--)
   {
-    fill(&arr[0][0], &arr[0][0] + 51 * 51, 0);
-    fill(&visited[0][0], &visited[0][0] + 51 * 51, 0);
+    fill(&arr[0][0], &arr[0][0] + 50 * 50, 0);
+    fill(&visited[0][0], &visited[0][0] + 50 * 50, 0);
     ret = 0;
     cin >> m >> n >> k;
     for (int i = 0; i < k; i++)

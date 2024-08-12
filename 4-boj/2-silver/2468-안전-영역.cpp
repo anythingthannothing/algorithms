@@ -2,20 +2,24 @@
 
 using namespace std;
 
-int n, r, c, nr, nc, ret = 1, arr[101][101], visited[101][101];
-vector<vector<int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+int n, r, c, nr, nc, ret = 1, arr[100][100], visited[100][100];
+pair<int, int> dirs[4] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 void DFS(int r, int c, int h)
 {
   visited[r][c] = 1;
-  for (int i = 0; i < 4; i++)
+  for (pair<int, int> dir : dirs)
   {
-    nr = r + dirs[i][0];
-    nc = c + dirs[i][1];
-    if (nr < 0 || nc < 0 || nr >= n || nc >= n)
+    nr = r + dir.first;
+    nc = c + dir.second;
+    if (nr < 0 || nc < 0 || nr >= n || nc >= n || visited[nr][nc])
+    {
       continue;
-    if (arr[nr][nc] > h && !visited[nr][nc])
+    }
+    if (arr[nr][nc] > h)
+    {
       DFS(nr, nc, h);
+    }
   }
   return;
 }
@@ -34,9 +38,9 @@ int main()
       cin >> arr[i][j];
     }
 
-  for (int h = 1; h < 101; h++)
+  for (int h = 1; h <= 100; h++)
   {
-    fill(&visited[0][0], &visited[0][0] + 101 * 101, 0);
+    fill(&visited[0][0], &visited[0][0] + 100 * 100, 0);
     int cnt = 0;
     for (int i = 0; i < n; i++)
     {
