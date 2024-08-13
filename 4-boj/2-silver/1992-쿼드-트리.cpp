@@ -9,7 +9,9 @@ string s;
 string quard(int y, int x, int size)
 {
   if (size == 1)
+  {
     return string(1, a[y][x]);
+  }
   char b = a[y][x];
   string ret = "";
   for (int i = y; i < y + size; i++)

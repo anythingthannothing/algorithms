@@ -17,7 +17,9 @@ int main()
     int rear = front + m - 1;
     cin >> pos;
     if (pos >= front && pos <= rear)
+    {
       continue;
+    }
     if (pos > rear)
     {
       mv = pos - rear;
