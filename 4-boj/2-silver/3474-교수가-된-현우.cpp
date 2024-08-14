@@ -16,7 +16,9 @@ int main()
     cin >> n;
     int fiveCount = 0;
     for (int j = 5; j <= n; j *= 5)
+    {
       fiveCount += n / j;
+    }
     cout << fiveCount << "\n";
   }
   return 0;

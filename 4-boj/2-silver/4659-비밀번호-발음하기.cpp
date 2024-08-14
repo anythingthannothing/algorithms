@@ -23,27 +23,45 @@ int main()
     char prev;
     for (int i = 0; i < s.size(); i++)
     {
+      if (flag)
+      {
+        break;
+      }
       char curr = s[i];
       if (isVowel(curr))
+      {
         cCount++, vCount = 0, hasVowel = 1;
+      }
       else
+      {
         vCount++, cCount = 0;
+      }
 
       if (vCount == 3 || cCount == 3)
+      {
         flag = 1;
+      }
 
       if (i >= 1 && prev == curr && (curr != 'e' && curr != 'o'))
+      {
         flag = 1;
+      }
 
       prev = curr;
     }
     if (hasVowel == 0)
+    {
       flag = 1;
+    }
 
     if (flag)
+    {
       cout << "<" << s << "> is not acceptable.\n";
+    }
     else
+    {
       cout << "<" << s << "> is acceptable.\n";
+    }
   }
   return 0;
 }

@@ -53,7 +53,9 @@ int main()
 
   sort(ret.begin(), ret.end(), cmp);
   for (string s : ret)
+  {
     cout << s << "\n";
+  }
 
   return 0;
 }

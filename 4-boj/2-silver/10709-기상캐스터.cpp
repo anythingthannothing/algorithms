@@ -27,7 +27,9 @@ int main()
       {
         int t = 1;
         while (j + 1 < c && arr[i][j + 1] == -1)
+        {
           arr[i][++j] = t++;
+        }
       }
     }
 
