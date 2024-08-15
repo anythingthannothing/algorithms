@@ -33,16 +33,26 @@ int main()
   {
     cin >> team >> s;
     if (aScore > bScore)
+    {
       countTime(aSum, s);
+    }
     else if (bScore > aScore)
+    {
       countTime(bSum, s);
+    }
+
     team == 1 ? aScore++ : bScore++;
     prev = s;
   }
   if (aScore > bScore)
+  {
     countTime(aSum, "48:00");
+  }
   else if (bScore > aScore)
+  {
     countTime(bSum, "48:00");
+  }
+
   cout << print(aSum) << "\n";
   cout << print(bSum) << "\n";
 

@@ -15,9 +15,13 @@ bool check(string s)
     else
     {
       if (!stk.empty())
+      {
         stk.pop();
+      }
       else
+      {
         return false;
+      }
     }
   }
   return stk.empty();
