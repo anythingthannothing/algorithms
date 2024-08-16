@@ -20,7 +20,9 @@ void meltCheese(int y, int x)
     int ny = y + dir.first;
     int nx = x + dir.second;
     if (ny < 0 || nx < 0 || ny >= n || nx >= m || visited[ny][nx])
+    {
       continue;
+    }
     meltCheese(ny, nx);
   }
   return;
@@ -34,12 +36,13 @@ int main()
 
   cin >> n >> m;
 
-  // 치즈 배열을 입력받는다.
   for (int i = 0; i < n; i++)
+  {
     for (int j = 0; j < m; j++)
     {
       cin >> arr[i][j];
     }
+  }
 
   while (true)
   {
@@ -47,21 +50,32 @@ int main()
     cheeses.clear();
     cheeseCount = 0;
     meltCheese(0, 0);
-    // 치즈의 갯수를 센다.
+
     for (pair<int, int> cheese : cheeses)
     {
       cheeseCount++;
       arr[cheese.first][cheese.second] = 0;
     }
-    bool flag = 0;
+
+    bool flag = false;
+
     for (int i = 0; i < n; i++)
+    {
       for (int j = 0; j < m; j++)
+      {
         if (arr[i][j] == 1)
+        {
           flag = 1;
+        }
+      }
+    }
 
     hour++;
+
     if (!flag)
+    {
       break;
+    }
   }
 
   cout << hour << "\n"
