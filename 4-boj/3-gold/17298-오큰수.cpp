@@ -20,5 +20,7 @@ int main()
     stk.push(i);
   }
   for (int i = 0; i < n; i++)
+  {
     cout << ret[i] << " ";
+  }
 }
