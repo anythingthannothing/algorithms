@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int visited[54][54], a[50][50], n, l, r, sum, cnt;
+int visited[50][50], a[50][50], n, l, r, sum, cnt;
 vector<pair<int, int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 vector<pair<int, int>> v;
 
@@ -13,7 +13,9 @@ void dfs(int y, int x, vector<pair<int, int>> &v)
     int ny = y + dir.first;
     int nx = x + dir.second;
     if (nx < 0 || nx >= n || ny < 0 || ny >= n || visited[ny][nx])
+    {
       continue;
+    }
     if (abs(a[ny][nx] - a[y][x]) >= l && abs(a[ny][nx] - a[y][x]) <= r)
     {
       visited[ny][nx] = 1;
@@ -51,17 +53,24 @@ int main()
           sum = a[i][j];
           dfs(i, j, v);
           if (v.size() == 1)
+          {
             continue;
+          }
+          if (v.size())
+          {
+            flag = 1;
+          }
           for (pair<int, int> b : v)
           {
             a[b.first][b.second] = sum / v.size();
-            flag = 1;
           }
         }
     }
 
     if (!flag)
+    {
       break;
+    }
     cnt++;
   }
   cout << cnt << "\n";

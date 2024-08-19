@@ -46,10 +46,10 @@ int main()
     {
       int ny = y + dir.first;
       int nx = x + dir.second;
-      if (!in(ny, nx))
+      if (!in(ny, nx) || fire_check[ny][nx] != INT_MAX || a[ny][nx] == '#')
+      {
         continue;
-      if (fire_check[ny][nx] != INT_MAX || a[ny][nx] == '#')
-        continue;
+      }
       fire_check[ny][nx] = fire_check[y][x] + 1;
       q.push({ny, nx});
     }
@@ -71,19 +71,21 @@ int main()
     {
       int ny = y + dir.first;
       int nx = x + dir.second;
-      if (!in(ny, nx))
+      if (!in(ny, nx) || person_check[ny][nx] || a[ny][nx] == '#' || fire_check[ny][nx] <= person_check[y][x] + 1)
+      {
         continue;
-      if (person_check[ny][nx] || a[ny][nx] == '#')
-        continue;
-      if (fire_check[ny][nx] <= person_check[y][x] + 1)
-        continue;
+      }
       person_check[ny][nx] = person_check[y][x] + 1;
       q.push({ny, nx});
     }
   }
   if (ret != 0)
+  {
     cout << ret << "\n";
+  }
   else
+  {
     cout << "IMPOSSIBLE \n";
+  }
   return 0;
 }

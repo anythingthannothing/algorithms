@@ -15,10 +15,10 @@ void combi(int start, vector<int> v)
     return;
   }
 
-  for (int i = start + 1; i < chicken.size(); i++)
+  for (int i = start; i < chicken.size(); i++)
   {
     v.push_back(i);
-    combi(i, v);
+    combi(i + 1, v);
     v.pop_back();
   }
   return;
@@ -29,17 +29,23 @@ int main()
 
   cin >> n >> m;
   for (int i = 0; i < n; i++)
+  {
     for (int j = 0; j < n; j++)
     {
       cin >> a[i][j];
       if (a[i][j] == 1)
+      {
         home.push_back({i, j});
+      }
       if (a[i][j] == 2)
+      {
         chicken.push_back({i, j});
+      }
     }
+  }
 
   vector<int> v;
-  combi(-1, v);
+  combi(0, v);
   for (vector<int> cList : chickenList)
   {
     int ret = 0;

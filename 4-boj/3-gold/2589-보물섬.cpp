@@ -21,7 +21,9 @@ void BFS(int y, int x)
       int ny = y + dir.first;
       int nx = x + dir.second;
       if (ny < 0 || ny >= n || nx < 0 || nx >= m || visited[ny][nx] || pMap[ny][nx] == 'W')
+      {
         continue;
+      }
       visited[ny][nx] = visited[y][x] + 1;
       q.push({ny, nx});
       _max = max(_max, visited[ny][nx]);
@@ -35,12 +37,15 @@ int main()
   cin >> n >> m;
 
   for (int i = 0; i < n; i++)
+  {
     for (int j = 0; j < m; j++)
     {
       cin >> pMap[i][j];
     }
+  }
 
   for (int i = 0; i < n; i++)
+  {
     for (int j = 0; j < m; j++)
     {
       if (pMap[i][j] == 'L')
@@ -48,6 +53,7 @@ int main()
         BFS(i, j);
       }
     }
+  }
   cout << _max - 1 << "\n";
   return 0;
 }
