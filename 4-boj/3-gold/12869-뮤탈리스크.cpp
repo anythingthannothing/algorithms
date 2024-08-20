@@ -27,17 +27,26 @@ int solve(int a, int b, int c)
     int a = q.front().a;
     int b = q.front().b;
     int c = q.front().c;
+
     q.pop();
+
     if (visited[0][0][0])
+    {
       break;
+    }
     for (int i = 0; i < 6; i++)
     {
       int na = max(0, a - _a[i][0]);
       int nb = max(0, b - _a[i][1]);
       int nc = max(0, c - _a[i][2]);
+
       if (visited[na][nb][nc])
+      {
         continue;
+      }
+
       visited[na][nb][nc] = visited[a][b][c] + 1;
+
       q.push({na, nb, nc});
     }
   }

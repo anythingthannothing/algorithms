@@ -2,9 +2,9 @@
 
 using namespace std;
 
-const int MAX = 200001;
-int visited[MAX];
-long long cnt[MAX];
+const int MAX = 200000;
+int visited[200001];
+long long cnt[200001];
 int n, k;
 queue<int> q;
 

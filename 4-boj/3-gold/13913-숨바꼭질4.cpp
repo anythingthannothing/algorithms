@@ -2,8 +2,8 @@
 
 using namespace std;
 
-const int _MAX = 200001;
-int visited[_MAX], _prev[_MAX], n, k, ret, curr, cnt, next;
+const int _MAX = 200000;
+int visited[200001], _prev[200001], n, k, ret, curr, cnt, next;
 vector<int> v;
 queue<int> q;
 int main()
@@ -22,8 +22,10 @@ int main()
     }
     for (int next : {curr + 1, curr - 1, curr * 2})
     {
-      if (next >= _MAX || next < 0 || visited[next])
+      if (next > _MAX || next < 0 || visited[next])
+      {
         continue;
+      }
       visited[next] = visited[curr] + 1;
       _prev[next] = curr;
       q.push(next);
@@ -37,6 +39,8 @@ int main()
   cout << ret - 1 << '\n';
   reverse(v.begin(), v.end());
   for (int i : v)
+  {
     cout << i << ' ';
+  }
   return 0;
 }
