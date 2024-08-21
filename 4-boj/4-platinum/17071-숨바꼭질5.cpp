@@ -27,7 +27,9 @@ int main()
   {
     k += turn;
     if (k > _MAX)
+    {
       break;
+    }
     if (visited[turn % 2][k])
     {
       ok = true;
@@ -41,7 +43,9 @@ int main()
       for (int next : {curr + 1, curr - 1, curr * 2})
       {
         if (next < 0 || next > _MAX || visited[turn % 2][next])
+        {
           continue;
+        }
         visited[turn % 2][next] = visited[(turn + 1) % 2][curr] + 1;
         if (next == k)
         {
@@ -51,15 +55,23 @@ int main()
         q.push(next);
       }
       if (ok)
+      {
         break;
+      }
     }
     if (ok)
+    {
       break;
+    }
     turn++;
   }
   if (ok)
+  {
     cout << turn << "\n";
+  }
   else
+  {
     cout << -1 << "\n";
+  }
   return 0;
 }
