@@ -12,6 +12,7 @@ void Qclear(queue<pair<int, int>> &q)
   queue<pair<int, int>> empty;
   swap(q, empty);
 }
+
 void water_melting()
 {
   while (waterQ.size())
@@ -23,7 +24,9 @@ void water_melting()
       int ny = y + dir.first;
       int nx = x + dir.second;
       if (ny < 0 || ny >= r || nx < 0 || nx >= c || visited[ny][nx])
+      {
         continue;
+      }
       if (lake[ny][nx] == 'X')
       {
         visited[ny][nx] = 1;
@@ -45,14 +48,22 @@ bool move_swan()
       int ny = y + dir.first;
       int nx = x + dir.second;
       if (ny < 0 || ny >= r || nx < 0 || nx >= c || visited_swan[ny][nx])
+      {
         continue;
+      }
       visited_swan[ny][nx] = 1;
       if (lake[ny][nx] == '.')
+      {
         swanQ.push({ny, nx});
+      }
       else if (lake[ny][nx] == 'X')
+      {
         swan_tempQ.push({ny, nx});
+      }
       else if (lake[ny][nx] == 'L')
+      {
         return true;
+      }
     }
   }
   return false;
@@ -76,7 +87,9 @@ int main()
         swanX = j;
       }
       if (lake[i][j] == '.' || lake[i][j] == 'L')
+      {
         visited[i][j] = 1, waterQ.push({i, j});
+      }
     }
   }
   swanQ.push({swanY, swanX});
