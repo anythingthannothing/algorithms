@@ -8,7 +8,9 @@ int n, a[1023];
 void divide(int s, int e, int level)
 {
   if (s > e)
+  {
     return;
+  }
   if (s == e)
   {
     ret[level].push_back(a[s]);

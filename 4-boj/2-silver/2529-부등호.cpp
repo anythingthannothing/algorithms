@@ -9,9 +9,13 @@ vector<string> ret;
 bool good(char x, char y, char op)
 {
   if (x < y && op == '<')
+  {
     return true;
+  }
   if (x > y && op == '>')
+  {
     return true;
+  }
   return false;
 }
 
@@ -25,7 +29,9 @@ void go(int idx, string num)
   for (int i = 0; i <= 9; i++)
   {
     if (check[i])
+    {
       continue;
+    }
     if (idx == 0 || good(num[idx - 1], i + '0', a[idx - 1]))
     {
       check[i] = 1;
@@ -45,7 +51,9 @@ int main()
   cin >> n;
 
   for (int i = 0; i < n; i++)
+  {
     cin >> a[i];
+  }
 
   go(0, "");
 

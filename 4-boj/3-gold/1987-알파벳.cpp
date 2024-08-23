@@ -2,25 +2,34 @@
 
 using namespace std;
 
-int r, c, ret;
-char arr[20][20], seen[26];
+int r, c, ret, seen[26];
+char arr[20][20];
 vector<pair<int, int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
-int dfs(int row, int col, int step)
+void dfs(int row, int col, int step)
 {
-  int curr = arr[row][col] - 'A';
-  if (row < 0 || row >= r || col < 0 || col >= c || seen[curr])
-    return step;
-  seen[curr] = 1;
+  ret = max(ret, step);
   for (pair<int, int> dir : dirs)
   {
     int nextRow = row + dir.first;
     int nextCol = col + dir.second;
-    int temp = dfs(nextRow, nextCol, step + 1);
-    ret = max(ret, temp);
+
+    if (nextRow < 0 || nextRow >= r || nextCol < 0 || nextCol >= c)
+    {
+      continue;
+    }
+    int next = arr[nextRow][nextCol] - 'A';
+
+    if (seen[next])
+    {
+      continue;
+    }
+
+    seen[next] = 1;
+    dfs(nextRow, nextCol, step + 1);
+    seen[next] = 0;
   }
-  seen[curr] = 0;
-  return ret;
+  return;
 }
 
 int main()
@@ -38,8 +47,8 @@ int main()
       cin >> arr[i][j];
     }
   }
-
-  ret = dfs(0, 0, 0);
+  seen[arr[0][0] - 'A'] = 1;
+  dfs(0, 0, 1);
 
   cout << ret;
 
