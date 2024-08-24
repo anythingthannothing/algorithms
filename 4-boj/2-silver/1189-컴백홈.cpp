@@ -11,8 +11,10 @@ int go(int y, int x)
 {
   if (y == 0 && x == c - 1)
   {
-    if (k == visited[y][x])
+    if (visited[y][x] = k)
+    {
       return 1;
+    }
     return 0;
   }
   int ret = 0;
@@ -21,7 +23,9 @@ int go(int y, int x)
     int ny = y + dir.first;
     int nx = x + dir.second;
     if (ny < 0 || ny >= r || nx < 0 || nx >= c || visited[ny][nx] || arr[ny][nx] == 'T')
+    {
       continue;
+    }
     visited[ny][nx] = visited[y][x] + 1;
     ret += go(ny, nx);
     visited[ny][nx] = 0;

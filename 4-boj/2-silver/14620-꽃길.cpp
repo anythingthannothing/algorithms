@@ -22,7 +22,9 @@ int setFlower(int y, int x)
 bool check(int y, int x)
 {
   if (arr[y][x])
+  {
     return false;
+  }
   for (auto dir : dirs)
   {
     int ny = y + dir.first;
@@ -70,10 +72,12 @@ int main()
 {
   cin >> n;
   for (int i = 0; i < n; i++)
+  {
     for (int j = 0; j < n; j++)
     {
       cin >> price[i][j];
     }
+  }
 
   flower(0, 0);
   cout << ret;
