@@ -17,7 +17,9 @@ main()
   cin >> n >> mp >> mf >> ms >> mv;
 
   for (int i = 0; i < n; i++)
+  {
     cin >> a[i].mp >> a[i].mf >> a[i].ms >> a[i].mv >> a[i].cost;
+  }
 
   for (int i = 1; i < (1 << n); i++)
   {
@@ -45,7 +47,9 @@ main()
     }
   }
   if (ret == INF)
+  {
     cout << -1 << '\n';
+  }
   else
   {
     sort(ret_v[ret].begin(), ret_v[ret].end());
