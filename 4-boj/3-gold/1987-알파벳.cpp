@@ -2,55 +2,48 @@
 
 using namespace std;
 
-int r, c, ret, seen[26];
-char arr[20][20];
-vector<pair<int, int>> dirs = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+int R, C, ret, ny, nx;
 
-void dfs(int row, int col, int step)
+char a[21][21];
+const int dy[] = {-1, 0, 1, 0};
+const int dx[] = {0, 1, 0, -1};
+
+void go(int y, int x, int num, int cnt)
 {
-  ret = max(ret, step);
-  for (pair<int, int> dir : dirs)
+  ret = max(ret, cnt);
+
+  for (int i = 0; i < 4; i++)
   {
-    int nextRow = row + dir.first;
-    int nextCol = col + dir.second;
+    ny = y + dy[i], nx = x + dx[i];
 
-    if (nextRow < 0 || nextRow >= r || nextCol < 0 || nextCol >= c)
-    {
-      continue;
-    }
-    int next = arr[nextRow][nextCol] - 'A';
-
-    if (seen[next])
+    if (ny < 0 || ny >= R || nx < 0 || nx >= C)
     {
       continue;
     }
 
-    seen[next] = 1;
-    dfs(nextRow, nextCol, step + 1);
-    seen[next] = 0;
+    int _next = (1 << (int)(a[ny][nx] - 'A'));
+
+    if ((num & _next) == 0)
+    {
+      go(ny, nx, num | _next, cnt + 1);
+    }
   }
+
   return;
 }
-
 int main()
 {
-  ios_base::sync_with_stdio(0);
-  cin.tie(0);
-  cout.tie(0);
+  cin >> R >> C;
 
-  cin >> r >> c;
-
-  for (int i = 0; i < r; i++)
+  for (int i = 0; i < R; i++)
   {
-    for (int j = 0; j < c; j++)
+    for (int j = 0; j < C; j++)
     {
-      cin >> arr[i][j];
+      cin >> a[i][j];
     }
   }
-  seen[arr[0][0] - 'A'] = 1;
-  dfs(0, 0, 1);
 
-  cout << ret;
-
+  go(0, 0, 1 << (int)(a[0][0] - 'A'), 1);
+  cout << ret << '\n';
   return 0;
 }
