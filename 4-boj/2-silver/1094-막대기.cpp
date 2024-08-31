@@ -10,7 +10,9 @@ int main()
   while (n != 1)
   {
     if (n & 1)
+    {
       ret++;
+    }
     n /= 2;
   }
   cout << ret;
