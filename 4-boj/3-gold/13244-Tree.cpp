@@ -9,11 +9,15 @@ string s;
 void dfs(int here)
 {
   visited[here] = 1;
+
   for (int there : adj[here])
   {
     if (!visited[there])
+    {
       dfs(there);
+    }
   }
+
   return;
 }
 
@@ -23,8 +27,12 @@ int main()
   while (t--)
   {
     for (int i = 0; i < 1000; i++)
+    {
       adj[i].clear();
+    }
+
     fill(visited, visited + 1000, 0);
+
     cnt = 0;
     cin >> n >> m;
     for (int i = 0; i < m; i++)
@@ -33,6 +41,7 @@ int main()
       adj[a].push_back(b);
       adj[b].push_back(a);
     }
+
     for (int i = 1; i <= n; i++)
     {
       if (!visited[i])
@@ -41,12 +50,16 @@ int main()
         cnt++;
       }
     }
+
     if (m == n - 1 && cnt == 1)
+    {
       cout << "tree" << '\n';
+    }
     else
     {
       cout << "graph" << '\n';
     }
   }
+
   return 0;
 }
