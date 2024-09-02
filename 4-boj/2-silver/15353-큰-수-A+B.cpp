@@ -9,7 +9,9 @@ int main()
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
+
   cin >> a >> b;
+
   while (a.size() || b.size() || sum)
   {
     if (a.size())
@@ -25,7 +27,10 @@ int main()
     ret += (sum % 10) + '0';
     sum /= 10;
   }
+
   reverse(ret.begin(), ret.end());
+
   cout << ret;
+
   return 0;
 }
