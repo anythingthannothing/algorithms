@@ -5,7 +5,6 @@ using namespace std;
 int n, d, q;
 long long ret;
 vector<pair<int, int>> qArray;
-// 오름차순 우선순위 큐
 priority_queue<int, vector<int>, greater<int>> pq;
 
 int main()
@@ -17,7 +16,9 @@ int main()
     cin >> d >> q;
     qArray.push_back({d, q});
   }
+
   sort(qArray.begin(), qArray.end());
+
   for (auto p : qArray)
   {
     pq.push(p.second);
@@ -26,11 +27,13 @@ int main()
       pq.pop();
     }
   }
+
   while (pq.size())
   {
     ret += pq.top();
     pq.pop();
   }
+
   cout << ret;
   return 0;
 }
