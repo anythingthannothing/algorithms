@@ -3,6 +3,7 @@
 using namespace std;
 
 int n, s, e, cnt;
+
 vector<pair<int, int>> tArray;
 
 int main()
@@ -16,13 +17,20 @@ int main()
   }
 
   sort(tArray.begin(), tArray.end());
+
   e = 0;
+
   for (auto it : tArray)
+  {
+
     if (e <= it.second)
     {
       cnt++;
       e = it.first;
     }
+  }
+
   cout << cnt;
+
   return 0;
 }
