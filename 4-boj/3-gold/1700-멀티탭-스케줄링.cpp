@@ -10,9 +10,12 @@ int main()
 {
   cin >> k >> n;
   for (int i = 0; i < n; i++)
+  {
     cin >> a[i];
+  }
 
   for (int i = 0; i < n; i++)
+  {
     if (!plugged[a[i]])
     {
       if (v.size() == k)
@@ -42,6 +45,7 @@ int main()
       v.push_back(a[i]);
       plugged[a[i]] = 1;
     }
+  }
 
   cout << cnt << "\n";
 

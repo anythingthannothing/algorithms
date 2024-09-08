@@ -13,16 +13,21 @@ int main()
   for (int i = 2; i <= n; i++)
   {
     if (che[i])
+    {
       continue;
+    }
     for (int j = 2 * i; j <= n; j += i)
     {
       che[j] = 1;
     }
   }
+
   for (int i = 2; i <= n; i++)
   {
     if (!che[i])
+    {
       prime.push_back(i);
+    }
   }
   int p = prime.size();
 
