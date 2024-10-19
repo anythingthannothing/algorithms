@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int n, m, curr, cnt, a[100000], ans;
+int n, m, curr, cnt, a[100000], ans, _max, mid;
 
 bool check(int mid)
 {
@@ -31,9 +31,10 @@ int main()
   for (int i = 0; i < n; i++)
   {
     cin >> a[i];
+    _max = max(a[i], _max);
   }
 
-  int lo = 0, hi = 1000000000, mid;
+  int lo = _max, hi = 1000000000;
 
   while (lo <= hi)
   {
@@ -42,9 +43,11 @@ int main()
     {
       ans = mid;
       hi = mid - 1;
-      continue;
     }
-    lo = mid + 1;
+    else
+    {
+      lo = mid + 1;
+    }
   }
 
   cout << ans;

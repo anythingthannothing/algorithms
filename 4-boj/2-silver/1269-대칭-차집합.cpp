@@ -18,6 +18,7 @@ int main()
   for (int i = 0; i < m; i++)
   {
     cin >> curr;
+
     if (nMap.find(curr) != nMap.end())
     {
       cnt++;

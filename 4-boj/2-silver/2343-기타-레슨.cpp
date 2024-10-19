@@ -2,16 +2,20 @@
 
 using namespace std;
 
-int n, m, a[100001], cnt, sum, total, answer = 987654321;
+int n, m, a[100001], cnt, sum, total, answer = 987654321, _max = -987654321;
 
 bool check(int mid)
 {
+  if (mid < _max)
+  {
+    return false;
+  }
+
   cnt = 1;
   sum = 0;
+
   for (int i = 0; i < n; i++)
   {
-    if (a[i] > mid)
-      return false;
     if (sum + a[i] > mid)
     {
       sum = 0;
@@ -19,6 +23,7 @@ bool check(int mid)
     }
     sum += a[i];
   }
+
   return cnt <= m;
 }
 
@@ -30,13 +35,15 @@ int main()
   {
     cin >> a[i];
     total += a[i];
+    _max = max(a[i], _max);
   }
 
   int lo = 0, hi = total, mid;
 
   while (lo <= hi)
   {
-    mid = (lo + hi) / 2;
+    mid = lo + (hi - lo) / 2;
+
     if (check(mid))
     {
       answer = mid;
