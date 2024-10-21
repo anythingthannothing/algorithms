@@ -21,7 +21,9 @@ int main()
       cin >> curr;
       nMap[curr] = true;
     }
+
     cin >> m;
+
     for (int i = 0; i < m; i++)
     {
       cin >> curr;

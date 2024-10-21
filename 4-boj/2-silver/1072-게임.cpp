@@ -16,6 +16,12 @@ int main()
   cin >> x >> y;
   z = y * 100 / x;
 
+  if (y * 100 / x >= 99)
+  {
+    cout << -1;
+    return 0;
+  }
+
   lo = 0, hi = 1000000000;
   while (lo <= hi)
   {
@@ -29,7 +35,7 @@ int main()
     lo = mid + 1;
   }
 
-  cout << (ans ? ans : -1);
+  cout << ans;
 
   return 0;
 }
