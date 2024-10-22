@@ -4,7 +4,7 @@ using namespace std;
 
 typedef long long ll;
 
-ll s, c, l, ans, a[1000000], sum;
+ll s, c, l, ans, a[1000000], sum, _max = 0;
 
 bool check(ll mid)
 {
@@ -24,12 +24,14 @@ int main()
 
   cin >> s >> c;
 
-  ll lo = 1, hi = 1000000000, mid;
   for (int i = 0; i < s; i++)
   {
     cin >> a[i];
+    _max = max(_max, a[i]);
     sum += a[i];
   }
+
+  ll lo = 1, hi = _max, mid;
 
   while (lo <= hi)
   {
