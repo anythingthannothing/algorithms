@@ -13,14 +13,22 @@ int main()
   for (int i = 0; i < n; i++)
   {
     cin >> curr;
+
     for (int j = curr; j <= k; j++)
     {
       a[j] = min(a[j], a[j - curr] + 1);
     }
   }
+
   if (a[k] == INF)
+  {
+
     cout << -1 << "\n";
+  }
   else
+  {
     cout << a[k] << "\n";
+  }
+
   return 0;
 }

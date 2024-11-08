@@ -12,10 +12,13 @@ int main()
   while (n--)
   {
     cin >> curr;
+
     for (int i = curr; i <= k; i++)
     {
       if (curr > 10000)
+      {
         continue;
+      }
       a[i] = a[i] + a[i - curr];
     }
   }
