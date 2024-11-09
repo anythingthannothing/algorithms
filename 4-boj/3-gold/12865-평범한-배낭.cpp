@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int n, k, w, v, a[100001];
+int n, k, w, v, dp[100001];
 
 int main()
 {
@@ -13,11 +13,11 @@ int main()
         cin >> w >> v;
         for (int j = k; j >= w; j--)
         {
-            a[j] = max(a[j - w] + v, a[j]);
+            dp[j] = max(dp[j - w] + v, dp[j]);
         }
     }
 
-    cout << a[k];
+    cout << dp[k];
 
     return 0;
 }
